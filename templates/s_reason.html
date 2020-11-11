@@ -1,0 +1,46 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="reason.css">
+        <title>Reason</title>
+    </head>
+
+    <body>
+        <button class="back">Back</button>
+
+        <div class="job">
+          Current job: <br> L14020
+        </div>
+
+        <div class="header">
+          <h1>Current Week</h1>
+        </div>
+
+        <div class="wrapper">
+            <div class="title">Supplier</div>
+            <p>'Engineering' is marked 'Not Done'. Please provide further details.</p>
+            <form action="#">
+                <div class="field">
+                    <select id="sreason" name="sreason">
+                        <option value="">Problem Category</option>
+                        <option value="staff">Staff error/problem</option>
+                        <option value="machine">Machine malfunction</option>
+                        <option value="supplier">Supplier issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <textarea name="snotes" id="snotes" rows="6" placeholder="Please provide any additional information"></textarea>
+                </div>
+                <div class="field">
+                    <button class="submit" type="submit">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </body>
+
+</html>
