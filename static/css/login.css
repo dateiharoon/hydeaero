@@ -13,14 +13,25 @@ html,body{
   background: #f2f2f2;
 }
 ::selection{
-    background: #0099cc;
-    color: #f2f2f2;
- }
-
+  background: #0099cc;
+  color: #f2f2f2;
+}
+img {
+  width: 45%;
+  height: auto;
+  display: block;
+}
 .wrapper{
   width: 40vh;
-  height: 50vh;
+  height: 70vh;
   background: #f2f2f2;
+}
+.logo{
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
 }
 .wrapper .title{
   font-size: 35px;
@@ -55,7 +66,6 @@ form .field input:valid{
 .wrapper form .field input:focus::placeholder{
   color: transparent;
 }
-
 form .field input[type="submit"]{
   color: #f2f2f2;
   border: none;
@@ -69,7 +79,24 @@ form .field input[type="submit"]{
 form .field input[type="submit"]:active{
   transform: scale(0.95);
 }
-#button {
+#button{
     margin-top: 10%;
+}
+@media (max-height: 46rem){
+  .wrapper{
+    width: 100%;
+    height: auto;
+  }
+  form {
+    width: 55%;
+    margin: 0 auto;
+  }
+  .wrapper form .field input[type="submit"]{
+   margin-top: -5%;
+  }
+  img{
+    width: 60%;
+    height: auto;
+  }
 }
 
