@@ -2,13 +2,14 @@
 
 <html>
 <head>
-  <link href="hydehome1.css" rel="stylesheet" type="text/css">
+  <link href="static/css/hydehome1.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Hyde SIPOC Current</title>
 </head>
 
 <body>
+  <p>Welcome back, {{ username }}!</p>
   <button class="logoff">Log Off</button>
 
 
@@ -29,15 +30,15 @@
        <div class="column1">
            <h2 align=center>ARE WE READY?</h2>
            <p align=center>
-             <a href="supplier"><button class="home button" type="button">Supplier</button></a>
-             <a href="input"><button type="button" class="home button">Input</button></a>
-             <a href="process.html"><button type="button" class="home button">Process</button></p></a>
+             <a href="{{ url_for('supplier') }}"><button class="home button" type="button">Supplier</button></a>
+             <a href="{{ url_for('input') }}"><button type="button" class="home button">Input</button></a>
+             <a href="{{ url_for('process') }}"><button type="button" class="home button">Process</button></p></a>
            </div>
        <div class="column2">
            <h2 align=center>HOW DID WE DO?</h2>
            <p align=center>
-             <a href="output"><button type="button" class="home button">Output</button></a>
-             <a href="customer"><button type="button" class="home button">Customer</button></p></a>
+             <a href="{{ url_for('output') }}"><button type="button" class="home button">Output</button></a>
+             <a href="{{ url_for('customer') }}"><button type="button" class="home button">Customer</button></p></a>
        </div>
      </section>
       <button class="newjob">Add new job</button>
