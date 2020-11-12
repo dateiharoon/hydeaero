@@ -15,13 +15,17 @@ body  {
  }
 
 /* Header/Logo Title */
-.header {
+header {
   top: 0;
-  padding: 1px;
-  text-align: center;
+  padding: 20px;
   background: #333333;
 }
 
+.headercenter {
+  display:inline-block;;
+  top:0px;
+  right:50%;
+}
 
  h1 {
    font-size: 50px;
