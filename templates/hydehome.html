@@ -10,7 +10,7 @@
 
 <body>
   <p>Welcome back, {{ username }}!</p>
-  <button class="logoff">Log Off</button>
+  <a href="{{ url_for('logout') }}"></a><button class="logoff">Log Off</button></a>
 
 
 
@@ -45,7 +45,7 @@
              <a href="{{ url_for('customer') }}"><button type="button" class="home button">Customer</button></p></a>
        </div>
      </section>
-      <button class="newjob">Proceed to next job</button>
+     <a href="{{ url_for('newjob') }}"><button class="newjob">Proceed to next job</button></a>
    </div>
 
 
