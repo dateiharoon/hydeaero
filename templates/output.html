@@ -2,35 +2,36 @@
 
 <head>
 
-<link href="static/css/hydehome1.css" rel="stylesheet" type="text/css">
+<link href="../static/css/sipoc.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
+
 <body>
-<table>
-  <th>
-<a href="hydehome">
-  <button type="button" class="logoff">Back</button>
-</a>
-</th>
+  <div class="welcome">Welcome back, {{ username }}!</div>
 
-<th>
-  <div class="job" style="color:#f2f2f2;">
-    Current job: <br> L14020
-  </div>
-</th>
-</table>
-<div class="header">
-  <h1>Current Week</h1>
-</div>
-
-<h2> Output
-</h2>
-<h4>Reporting out of the cell target boards i.e. am I to plan for the shift? 
+  <!-- HEADER STARTS HERE -->
+  <header>
+    <div class="hrow">
+      <div class="hcolumnl">
+        <a href="hydehome.html">
+          <button type="button" class="logoff">Back</button>
+        </a>
+      </div>
+      <div class="hcolumn">
+        <h1>Output</h1>
+      </div>
+      <div class="hcolumnj">
+        <h2>Current Job: <br> L14020</h2>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER ENDS HERE -->
+<h2>Reporting out of the cell target boards i.e. am I to plan for the shift? 
 Did I achieve my stage target and finished parts target for the shift?
-</h4>
+</h2>
 <form action = "", method = "post", enctype = "multipart/form-data">
-
 <table style="width:100%; text-align:center">
   <tr>
     <th style="width:40%"></th>
@@ -47,13 +48,13 @@ Did I achieve my stage target and finished parts target for the shift?
     <td>To shift target</td>
       <td>
         <label class="greencontainer">
-          <input type="checkbox">
+          <input type="checkbox" id="green">
         <span class="checkmark"></span>
   </label>
 </td>
       <td>
         <label class="redcontainer">
-          <input type="checkbox">
+          <input type="checkbox" id="red">
         <span class="checkmark"></span>
     </label>
       </td>
@@ -64,13 +65,13 @@ Did I achieve my stage target and finished parts target for the shift?
     <td>Are reasons escalated if target missed</td>
     <td>
       <label class="greencontainer">
-        <input type="checkbox">
+        <input type="checkbox" id="green1">
       <span class="checkmark"></span>
 </label>
     </td>
     <td>
       <label class="redcontainer">
-        <input type="checkbox">
+        <input type="checkbox" id="red1">
       <span class="checkmark"></span>
   </label>
     </td>
@@ -84,13 +85,13 @@ Did I achieve my stage target and finished parts target for the shift?
     <td>To shift target</td>
     <td>
       <label class="greencontainer">
-        <input type="checkbox">
+        <input type="checkbox" id="green2">
       <span class="checkmark"></span>
 </label>
     </td>
     <td>
       <label class="redcontainer">
-        <input type="checkbox">
+        <input type="checkbox" id="red2">
       <span class="checkmark"></span>
   </label>
     </td>
@@ -100,22 +101,29 @@ Did I achieve my stage target and finished parts target for the shift?
     <td>Are reasons escalated if target missed</td>
     <td>
       <label class="greencontainer">
-        <input type="checkbox">
+        <input type="checkbox" id="green3">
       <span class="checkmark"></span>
 </label>
     </td>
     <td>
       <label class="redcontainer">
-        <input type="checkbox">
+        <input type="checkbox" id="red3">
       <span class="checkmark"></span>
   </label>
     </td>
     <td><input type = "text", id="sign", name = "sign" placeholder="Enter your name here"/></td>
   </tr>
-  <tr>
-    <td></td><td></td><td></td>
-    <td><input class="logoff" type = "submit" name="submit" value = "Done" style="float:right"></td>
-  </tr>
 </table>
+  <div class="bottom">
+    <div class="centeredbutton">
+      <a href="hydehome.html">
+        <button class="save">Save</button>
+      </a>
+    </div>
+  </div>
+</form>
 </body>
+
+<script src="../static/js/checkboxes.js"></script>
+
 </html>
