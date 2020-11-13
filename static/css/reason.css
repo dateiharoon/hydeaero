@@ -44,7 +44,7 @@ h2 {
     display: inline;
     padding: 12px 30px;
     color: #3E3E3E;
-    background-color: #80dfff;
+    background-color: #13a2db;
     text-align: center;
     cursor: pointer;
     border-radius: 3px;
@@ -108,7 +108,7 @@ select {
     outline: none;
     text-align: center;
     color: #3E3E3E;
-    background-color: #80dfff;
+    background-color: #13a2db;
     border-radius: 3px;
     font-size: 18px;
     font-weight: 700;

@@ -1,32 +1,44 @@
 <html>
+
 <head>
-
-<link href="static/css/hydehome1.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="../static/css/complete.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-<table>
-  <th>
-<a href="hydehome">
-  <button type="button" class="logoff">Back</button>
-</a>
-</th>
 
-<th>
-  <div class="job" style="color:#f2f2f2;">
-    Current job: <br> L14020
+<body>
+  <div class="welcome">Welcome back, {{ username }}!</div>
+
+  <!-- HEADER STARTS HERE -->
+  <header>
+    <div class="hrow">
+      <div class="hcolumnl">
+        <a href="hydehome.html">
+          <button type="button" class="logoff">Back</button>
+        </a>
+      </div>
+      <div class="hcolumn">
+        <h1>Complete current job</h1>
+      </div>
+      <div class="hcolumnj">
+        <h2>Current Job: <br> L14020</h2>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER ENDS HERE -->
+  <section>
+  <h2>
+    Completing this job will move you on to the next one. Do you want to complete?​
+  </h2>
+</section> 
+
+<div class="bottom">
+  <div class="centeredbutton">
+    <a href="hydehome.html">
+      <button class="completejob">Complete this job</button>
+    </a>
   </div>
-</th>
-</table>
-<div class="header">
-  <h1>Complete Job</h1>
 </div>
-<h2>
-  Completing this job will move you on to the next one. Do you want to complete?​
-</h2>
-<div  style="text-align:center">
-<button type="button" class="logoff">Complete</button>
-</div>
+
 </body>
 </html>
