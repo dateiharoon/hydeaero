@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.secret_key = '1a2b3c4d5e'
 
 # Enter your database connection details below
-app.config['MYSQL_HOST'] = '3.223.61.173'#change to localhost
+app.config['MYSQL_HOST'] = '3.223.61.173'
 app.config['MYSQL_USER'] = 'haroon'
 app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'test'
@@ -65,7 +65,7 @@ def logout():
    session.pop('id', None)
    session.pop('username', None)
    # Redirect to login page
-   return render_template('login')
+   return redirect(url_for('login'))
 
 
 # http://localhost:5000/pythinlogin/register - this will be the registration page, we need to use both GET and POST requests
@@ -120,30 +120,10 @@ def profile():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
-# http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
-@app.route('/newjob')
-def newjob():
-    # Check if user is loggedin
-    if 'loggedin' in session:
-        if request.method == 'POST' and 'newjob' in request.form:
-            # Create variables for easy access
-            newjob = request.form['newjob']
-            # We need all the account info for the user so we can display it on the profile page
-            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute('INSERT INTO newjob VALUES (NULL, %s)', (newjob))
-            values = cursor.fetchone()
-            # Show the profile page with account info
-            return render_template('newjob.html', values=values)
-    # User is not loggedin redirect to login page
-    return redirect(url_for('newjob'))
-
-
 @app.route('/')
 @app.route('/index.html')
 def index():
     return render_template('index.html', the_title='Login')
-
-
 
 @app.route('/supplier.html')
 def supplier():
@@ -168,7 +148,5 @@ def input():
 def customer():
     return render_template('customer.html', the_title='Customer')
 
-
-
 if __name__ =='__main__':
-    app.run(debug=True)
+	app.run(debug=True)
