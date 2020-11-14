@@ -9,48 +9,44 @@
 </head>
 
 <body>
-  <div class="welcome">Welcome back, {{ username }}!</div>
+  <p>Welcome back, {{ username }}!</p>
+  <a href="{{ url_for('logout') }}"></a><button class="logoff">Log Off</button></a>
 
-  <!-- HEADER STARTS HERE -->
-  <header>
-    <div class="hrow">
-      <div class="hcolumnl">
-        <button class="logoff">Log Off</button>
-      </div>
-      <div class="hcolumn">
-        <h1>Current Week</h1>
-      </div>
-      <div class="hcolumnj">
-        <h2>Current Job: <br> L14020</h2>
-      </div>
-    </div>
-  </header>
-  <!-- HEADER ENDS HERE -->
 
-    <a href="hydeprevious.html" class="previous">&#8249;</a>
-    <a href="hydenext.html" class="next">&#8250;</a>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <h2 align=center>ARE WE READY?</h2>
-          <p align=center>
-            <a href="supplier.html"><button class="home button" type="button">Supplier</button></a>
-            <a href="{{ url_for('input') }}"><button type="button" class="home button">Input</button></a>
-            <a href="{{ url_for('process') }}"><button type="button" class="home button">Process</button></p></a>
-        </div>
-        <div class="column">
-            <h2 align=center>HOW DID WE DO?</h2>
-            <p align=center>
-              <a href="{{ url_for('output') }}"><button type="button" class="home button">Output</button></a>
-              <a href="{{ url_for('customer') }}"><button type="button" class="home button">Customer</button></p></a>
-        </div>
-      </div>
-      <div class="bottom">
-        <a href="complete.html">
-          <button class="newjob">Complete and Proceed</button>
-        </a>
-      </div>
-    </section>
+<div class="job" style="color:#f2f2f2;">
+  Current job: <br> L14020
+</div>
+
+<a href="hydeprevious.html" class="previous round">&#8249;</a>
+<a href="hydenext.html" class="next round">&#8250;</a>
+
+<header>
+  <img src="hollygatelogo.png" alt="Hollygate Logo" style="width:25%; margin: 30px 80px 0 20px;" >
+  <div class="headercenter">
+  <h1 style="display:inline; right:50%;">Current Week</h1>
+  <div>
+</header>
+
+
+<section>
+<div class="row">
+       <div class="column1">
+           <h2 align=center>ARE WE READY?</h2>
+           <p align=center>
+             <a href="{{ url_for('supplier') }}"><button class="home button" type="button">Supplier</button></a>
+             <a href="{{ url_for('input') }}"><button type="button" class="home button">Input</button></a>
+             <a href="{{ url_for('process') }}"><button type="button" class="home button">Process</button></p></a>
+           </div>
+       <div class="column2">
+           <h2 align=center>HOW DID WE DO?</h2>
+           <p align=center>
+             <a href="{{ url_for('output') }}"><button type="button" class="home button">Output</button></a>
+             <a href="{{ url_for('customer') }}"><button type="button" class="home button">Customer</button></p></a>
+       </div>
+     </section>
+     <a href="{{ url_for('newjob') }}"><button class="newjob">Proceed to next job</button></a>
+   </div>
+
 </body>
 </html>

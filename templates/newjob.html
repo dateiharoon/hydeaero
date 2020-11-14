@@ -3,6 +3,7 @@
 <head>
 
 <link href="../static/css/complete.css" rel="stylesheet" type="text/css">
+<link href="../static/css/hydehome1.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -17,7 +18,7 @@
   </div>
   <br><br><br>
 
-<form action = "", method = "post", enctype = "multipart/form-data">
+<form action = "{{ url_for('newjob') }}" method = "post", enctype = "multipart/form-data">
 <table style="width:100%; text-align:center">
   <tr>
     <th style="width:20%"></th>
@@ -29,5 +30,6 @@
 
 </table>
 </form>
+{{ newjob }}
 </body>
 </html>
