@@ -24,10 +24,13 @@ app.config['MYSQL_DB'] = 'test'
 mysql = MySQL(app)
 
 
-
 # http://localhost:5000/pythonlogin/ - this will be the login page, we need to use both GET and POST requests
 @app.route('/', methods=['GET', 'POST'])
 def login():
+    if 'loggedin' in session:
+        # User is loggedin show them the home page
+        return render_template('hydehome.html', username=session['username'])
+    # User is not loggedin redirect to login page
 # Output message if something goes wrong...
     msg = ''
     # Check if "username" and "password" POST requests exist (user submitted form)
@@ -47,7 +50,7 @@ def login():
             session['id'] = values['id']
             session['username'] = values['username']
             # Redirect to home page
-            return redirect(url_for('hydehome'))
+            return render_template('hydehome.html', username=session['username'])
         else:
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
@@ -100,15 +103,7 @@ def register():
     # Show registration form with message (if any)
     return render_template('register.html', msg=msg)
 
-# http://localhost:5000/pythinlogin/home - this will be the home page, only accessible for loggedin users
-@app.route('/hydehome')
-def hydehome():
-    # Check if user is loggedin
-    if 'loggedin' in session:
-        # User is loggedin show them the home page
-        return render_template('hydehome.html', username=session['username'])
-    # User is not loggedin redirect to login page
-    return redirect(url_for('login'))    
+  
 
 
 # http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
@@ -132,7 +127,7 @@ def index():
 
 @app.route('/supplier.html')
 def supplier():
-    return render_template('supplier.html', the_title='Supplier')
+    return render_template('supplier.html', username=session['username'] , the_title='Supplier')
 
 @app.route('/process.html')
 def process():
