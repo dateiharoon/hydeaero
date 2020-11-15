@@ -6,6 +6,8 @@ from flask_login import LoginManager,UserMixin
 from flask_login import login_user, logout_user,current_user,login_required
 import MySQLdb.cursors
 import re
+import json
+import numpy as np
 
 
 
@@ -120,14 +122,35 @@ def profile():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
+
+# http://localhost:5000/pythinlogin/register - this will be the registration page, we need to use both GET and POST requests
+@app.route('/supplier.html', methods=["GET", "POST"])
+def supplier():
+    if 'loggedin' in session:
+          cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+          cursor.execute("SELECT * FROM supplierDashbord")
+          values = cursor.fetchall()
+          print(values)
+          print(str(values))
+          return render_template('supplier.html', data=values,username=session['username'])
+    return redirect(url_for('login'))
+       
+        
+  
+@app.route('/fetch')
+def fetch():
+    ##curs = dbconn.cursor()
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute("SELECT * FROM supplierDashbord")
+    values = cursor.fetchall()
+    #dbconn.close()
+    print(values)
+    return render_template("fetch.html", result=values)
 @app.route('/')
 @app.route('/index.html')
 def index():
     return render_template('index.html', the_title='Login')
 
-@app.route('/supplier.html')
-def supplier():
-    return render_template('supplier.html', username=session['username'] , the_title='Supplier')
 
 @app.route('/process.html')
 def process():
@@ -149,4 +172,4 @@ def customer():
     return render_template('customer.html', the_title='Customer')
 
 if __name__ =='__main__':
-	app.run(debug=True)
+    app.run(debug=True)
