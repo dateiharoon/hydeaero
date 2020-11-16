@@ -198,11 +198,11 @@ body {
     outline: none;
 }
 
-.redcontainer input[type=checkbox]:checked {
-    background-color: red;
+.red .redcontainer input[type=checkbox]:checked {
+    color: red;
 }
-.redcontainer input[type=checkbox]:checked:hover {
-    background-color: red;
+.red .redcontainer input[type=checkbox]:checked:hover {
+    color: red;
 }
   
 .greencontainer input[type=checkbox] {
@@ -214,11 +214,11 @@ body {
     outline: none;
 }
 
-.greencontainer input[type=checkbox]:checked {
-    background-color: green;
+.green .greencontainer input[type=checkbox]:checked {
+    color: green;
 }
-.greencontainer input[type=checkbox]:checked:hover {
-    background-color: green;
+.green .greencontainer input[type=checkbox]:checked:hover {
+    color: green;
 }
 input[type=checkbox]:hover {
     background-color: #d4d4d4;
@@ -277,4 +277,12 @@ input[type="text"]:focus {
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: bold;
+}
+
+.greencontainer .green {
+  color: green;
+}
+
+.redcontainer .red {
+  color: red;
 }

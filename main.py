@@ -7,14 +7,13 @@ from flask_login import login_user, logout_user,current_user,login_required
 import MySQLdb.cursors
 import re
 import json
-import numpy as np
 
 
 
 app = Flask(__name__)
 
 # Change this to your secret key (can be anything, it's for extra protection)
-app.secret_key = '1a2b3c4d5e'
+app.secret_key = '6_3A.w+jXk[vY%AA'
 
 # Enter your database connection details below
 app.config['MYSQL_HOST'] = '3.223.61.173'
@@ -24,7 +23,6 @@ app.config['MYSQL_DB'] = 'test'
 
 # Intialize MySQL
 mysql = MySQL(app)
-
 
 # http://localhost:5000/pythonlogin/ - this will be the login page, we need to use both GET and POST requests
 @app.route('/', methods=['GET', 'POST'])
@@ -123,12 +121,12 @@ def profile():
     return redirect(url_for('login'))
 
 
-# http://localhost:5000/pythinlogin/register - this will be the registration page, we need to use both GET and POST requests
+#supplier dasboard/values for dashboard/ select statement
 @app.route('/supplier.html', methods=["GET", "POST"])
 def supplier():
     if 'loggedin' in session:
           cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-          cursor.execute("SELECT * FROM supplierDashbord")
+          cursor.execute("SELECT * FROM supplierDashboard")
           values = cursor.fetchall()
           print(values)
           print(str(values))
